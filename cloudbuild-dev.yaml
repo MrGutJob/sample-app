@@ -6,11 +6,19 @@ steps:
 
   # Step 2: Build the Docker image for the Go application
   - name: 'gcr.io/cloud-builders/docker'
+<<<<<<< HEAD
     args: ['build', '-t', 'us-central1-docker.pkg.dev/qwiklabs-gcp-00-7461f405e088/my-repository/hello-cloudbuild-dev:<version>', '.']
 
   # Step 3: Push the Docker image to Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'us-central1-docker.pkg.dev/qwiklabs-gcp-00-7461f405e088/my-repository/hello-cloudbuild-dev:<version>']
+=======
+    args: ['build', '-t', 'us-central1-docker.pkg.dev/qwiklabs-gcp-00-7461f405e088/my-repository/hello-cloudbuild-dev:1:0', '.']
+
+  # Step 3: Push the Docker image to Artifact Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'us-central1-docker.pkg.dev/qwiklabs-gcp-00-7461f405e088/my-repository/hello-cloudbuild-dev:1:0']
+>>>>>>> dd156da (Update version to v1.0 and container image name)
 
   # Step 4: Apply the production deployment YAML file to the production namespace
   - name: 'gcr.io/cloud-builders/kubectl'
